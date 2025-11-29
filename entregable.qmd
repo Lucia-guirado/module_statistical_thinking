@@ -9,6 +9,7 @@ format:
     code-overflow: wrap
     toc: true
     toc-location: left
+    toc-depth: 2
     embed-resources: true
     css: styles.css
     output-file: "index.html"
@@ -303,9 +304,63 @@ publicadas en la plataforma AirBnB y nos pide que le asesoremos respondiendo a l
 Nuestro cliente busca mejorar el rendimiento económico de sus viviendas, identificando acciones que pueda aumentar el precio de sus alojamientos.
 Nuestro objetivo es analizar los factores que influyen en la fijación de los precios de Airbnb, mediante datos de propiedades de Airbnb en Madrid, y proporcionar una serie de estrategias prácticas basadas en datos, que permitan al cliente aumentar el precio de sus viviendas.
 
-# Roadmap del Análisis {#roadmap}
 
-## Carga y Exploración de Datos {#datos}
+# Roadmap del Proyecto {#roadmap}
+
+```{=html}
+<div style="display:flex; justify-content:center; margin: 40px 0;">
+    <div style="display:flex; flex-direction:column; gap:0;">
+        <!-- Preparar datos -->
+        <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">⚙️</div>
+                <div style="width:3px; height:80px; background:#4F8A8B;"></div>
+            </div>
+            <div style="padding-top:0.3em;">
+                <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Preparar datos</div>
+                <div style="font-size:0.9em; color:#666;">Limpieza y variables</div>
+            </div>
+        </div>
+        
+        <!-- Explorar -->
+        <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">🔍</div>
+                <div style="width:3px; height:80px; background:#4F8A8B;"></div>
+            </div>
+            <div style="padding-top:0.3em;">
+                <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Explorar</div>
+                <div style="font-size:0.9em; color:#666;">Análisis y visualizaciones</div>
+            </div>
+        </div>
+        
+        <!-- Hipótesis -->
+        <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">🧠</div>
+                <div style="width:3px; height:80px; background:#4F8A8B;"></div>
+            </div>
+            <div style="padding-top:0.3em;">
+                <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Hipótesis</div>
+                <div style="font-size:0.9em; color:#666;">Drivers e impacto</div>
+            </div>
+        </div>
+        <!-- Acciones -->
+        <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">💼</div>
+                <div style="width:3px; height:80px; background:#4F8A8B;"></div>
+            </div>
+            <div style="padding-top:0.3em;">
+                <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Acciones</div>
+                <div style="font-size:0.9em; color:#666;">Quick wins operacionales</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+```
+# Carga y Exploración de Datos {#datos}
 
 ### Carga de Datasets
 EXPLICAR
@@ -530,7 +585,7 @@ fig_barrios = px.scatter_mapbox(
     size_max=50,
     zoom=11,
     center=dict(lat=40.4168, lon=-3.7038),
-    title='Análisis por Barrio: Precio Medio (Tamaño = Cantidad de Propiedades)',
+    title='Análisis por Barrio',
     labels={'precio_medio': 'Precio Medio (€)'}
 )
 
@@ -812,7 +867,7 @@ fig= px.box(
     x='review_scores_cleanliness', 
     y='price',
     color='review_scores_cleanliness',
-    color_discrete_sequence=px.colors.sequential.Pastel
+    color_discrete_sequence=px.colors.qualitative.Pastel
 )
 
 fig.update_layout(
