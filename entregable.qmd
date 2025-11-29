@@ -849,6 +849,10 @@ La cocicna es otro de los amenities que impacta positivamente en el precio medio
 
 ### Conclusión de Hipótesis 1
 
+**Hallazgos clave:**
+
+- **Instalación de amenities:** TV, aire acondicionado, calefacción y cocina aumentan significativamente el precio medio.
+
 Analizando los datos de amenities se puede oservar que aquellas como que la vivienda incluya TV, aire acondicionado, calefaccion o cocina tienen un precio medio mayor que aquellas viviendas que no las incluyen. Sin embargo, la instalación de Wifi no es estadisticamente significativa en el precio, por lo que la isntalación de wifi no deberia de ser prioritaria a la hora de aumentar el precio de un alojamiento.
 
 ---
@@ -1071,7 +1075,7 @@ Ajustar la política de cancelación según el tipo de propiedad.
 
 La implementeación de una política de cancelación debe de ser considerada en función de la propiedad y sus características. Para propiedades premium o nuevas, se recomienda implementar una política estricta de cancelación, ya que esto permite justificar precios más altos. Por otro lado, para propiedades estándar o competitivas, se recomienda utilizar políticas de cancelación moderadas o flexibles, ya que mantiene un precio competitivo y maximiza la ocupación. Aun así, este indicador debe de ser estudiado en conjunto con otros factores para determinar la mejor estrategia de precios, ya que se puede deber a que viviendas premium utilizan políticas restrictivas para proteger su inversión.
 
-### **Cancelación** 
+### **Limpieza** 
 Mejorar la calidad del servicio de limpieza para obtener mejores reseñas y justificar precios más altos.
 
 Las viviendas que reciben mejores calificaciones de limpieza tienden a tener precios medios más altos. Por lo tanto, se recomienda invertir en mejorar la calidad del servicio de limpieza, ya sea mediante la contratación de personal adicional, la implementación de estándares más rigurosos o la utilización de productos de limpieza de alta calidad puede resultar en mejores reseñas por parte de los huéspedes, lo que a su vez justifica precios más altos y mejora la reputación del alojamiento.
