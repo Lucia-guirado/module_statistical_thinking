@@ -187,10 +187,9 @@ Module 3: Statistical Thinking
 -   [2. Definición del Problema](#problema)
 -   [3. Roadmap del Análisis](#roadmap)
 -   [4. Carga y Exploración de Datos](#datos)
--   [5. Análisis del Precio de las Vivendas por Barrio](#geografia)
--   [6. Análisis de Hipótesis](#hipotesis)
--   [7. Recomendaciones](#recomendaciones)
--   [8. Conclusiones](#conclusiones)
+-   [5. Análisis de Hipótesis](#hipotesis)
+-   [6. Recomendaciones](#recomendaciones)
+-   [7. Conclusiones](#conclusiones)
 
 :::
 
@@ -313,7 +312,7 @@ Nuestro objetivo es analizar los factores que influyen en la fijación de los pr
         <!-- Preparar datos -->
         <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em;">
             <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
-                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">⚙️</div>
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">1</div>
                 <div style="width:3px; height:80px; background:#4F8A8B;"></div>
             </div>
             <div style="padding-top:0.3em;">
@@ -325,7 +324,7 @@ Nuestro objetivo es analizar los factores que influyen en la fijación de los pr
         <!-- Explorar -->
         <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
             <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
-                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">🔍</div>
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">2</div>
                 <div style="width:3px; height:80px; background:#4F8A8B;"></div>
             </div>
             <div style="padding-top:0.3em;">
@@ -337,23 +336,23 @@ Nuestro objetivo es analizar los factores que influyen en la fijación de los pr
         <!-- Hipótesis -->
         <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
             <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
-                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">🧠</div>
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">3</div>
                 <div style="width:3px; height:80px; background:#4F8A8B;"></div>
             </div>
             <div style="padding-top:0.3em;">
                 <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Hipótesis</div>
-                <div style="font-size:0.9em; color:#666;">Drivers e impacto</div>
+                <div style="font-size:0.9em; color:#666;">Planteamiento de hipótesis y análisis</div>
             </div>
         </div>
         <!-- Acciones -->
         <div style="display:flex; align-items:flex-start; gap:1.5em; margin-bottom:2.5em; margin-left:0;">
             <div style="display:flex; flex-direction:column; align-items:center; gap:1em;">
-                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">💼</div>
+                <div style="width:1.8em; height:1.8em; border-radius:50%; background:#4F8A8B; color:white; display:flex; align-items:center; justify-content:center; font-size:1em; flex-shrink:0;">4</div>
                 <div style="width:3px; height:80px; background:#4F8A8B;"></div>
             </div>
             <div style="padding-top:0.3em;">
                 <div style="font-weight:bold; color:#4F8A8B; font-size:1.1em;">Acciones</div>
-                <div style="font-size:0.9em; color:#666;">Quick wins operacionales</div>
+                <div style="font-size:0.9em; color:#666;">Recomendaciones para aumentar el valor de la vivienda</div>
             </div>
         </div>
 
@@ -363,7 +362,8 @@ Nuestro objetivo es analizar los factores que influyen en la fijación de los pr
 # Carga y Exploración de Datos {#datos}
 
 ### Carga de Datasets
-EXPLICAR
+
+Para realizar el análisis, se han utilizado cinco datasets proporcionados por la plataforma AirBnB que contienen información relevante sobre los alojamientos en Madrid. Estos datasets incluyen detalles sobre los anfitriones, las propiedades, la ubicación, las condiciones de reserva y las reseñas de los huéspedes.
 
 ```{python}
 # Cargar los diferentes datasets
@@ -386,7 +386,17 @@ print(f"Reviews: {df_reviews.shape}")
 
 ### Descripción de Tablas
 
-EXPLICAR
+Los datos se componen de cinco tablas principales, cada una con un enfoque específico:
+
+- **Host:** Información sobre los anfitriones, incluyendo su antigüedad y verificación.
+
+- **Localización:** Datos geográficos de las propiedades, como barrio y coordenadas.
+
+- **Propiedad:** Detalles de las características de las viviendas, como tipo, número de habitaciones y amenidades.
+
+- **Condiciones:** Información sobre las condiciones de reserva, incluyendo precio, políticas de cancelación y mínimo de noches.
+
+- **Reseñas:** Historial de reseñas y puntuaciones otorgadas por los huéspedes.
 
 ```{python}
 # Descripción de las variables principales
@@ -419,7 +429,8 @@ display(HTML(html_table))
 ```
 
 ### Fusión de Datasets
-EXPLICAR
+
+Para llevar a cabo un análisis integral, se han fusionado los cinco datasets en un único DataFrame basado en la columna común 'id', que identifica de manera única cada propiedad.
  
 ```{python}
 # Fusionar todos los datasets por 'id'
@@ -439,6 +450,7 @@ print(f"Dataset fusionado: {df.shape}")
 ### Transformación y filtrado de los datos
 
 Se ha realizado un filtrado de los datos para centrarse únicamente en las viviendas que presentan características comparables a las de la cartera del cliente.
+
 ```{python}
 df = df.query("property_type == 'apartment' and bedrooms <= 3 and bedrooms >=1 and bathrooms <= 2 and minimum_nights <= 7" )
 df.shape
@@ -449,8 +461,10 @@ if 'bedrooms' in df.columns:
 if 'minimum_nights' in df.columns:
     df['minimum_nights'] = df['minimum_nights'].astype('category')
 if 'cancellation_policy' in df.columns:
-    df['cancellation_policy'] = df['cancellation_policy'].astype('category')
+    df['cancellation_policy'] = df['cancellation_policy'].astype('category') 
 ```
+
+En la siguiente figura se observa el número de viviendas distribuidas en función del precio. Un número pequeño de viviendas tienen precios muy elevados, lo que puede distorsionar el análisis posterior. Por ello, se procede a eliminar los outliers de la variable objetivo (precio) utilizando el método del rango intercuartílico (IQR).
 
 ```{python}
 plot_start()
@@ -476,7 +490,9 @@ df = df[(df['price'] >= lower_bound) & (df['price'] <= upper_bound)]
 print(df.shape)
 ```
 
-EXPLICAR QUE DE NO SE CUENTAS PUBLICACIONES SE NOS QUEDAN EN OTRAS NO SE CUANTAS
+Antes del filtrado el número de viviendas que teníamos era de 21.020 viviendas, de las cuales 14.308 se ajustan a las características del cliente. Para poder ajustar mejor el análisis, se han eliminado los outliers de la variable objetivo (precio) quedándonos finalmente con 13.014 viviendas.
+
+
 ```{python}
 plot_start()
 sns.histplot(
@@ -486,10 +502,14 @@ sns.histplot(
 plot_end()
 ```
 
-EXPLICAR AMBOS GRAFICOS:
+Aquí se puede observar la distribución del precio tras eliminar los outliers, quedando un rango de precios entre 10€ y 200€ aproximadamente, donde se concentra la mayoría de las viviendas y se llevarán a cabo los análisis posteriores.
 
 
 ### Estadísticas Descriptivas
+
+Los precios de las propiedades muestran una clara variedad. El precio promedio es de 67,58 €, mientras que la mediana es de 60 €, lo que indica que la mayoría de los alojamientos se concentran alrededor de ese valor. El rango va desde un mínimo muy bajo de 1 € hasta un máximo de 190 €, mostrando que hay tanto opciones muy económicas como otras mucho más caras. La desviación estándar de 37,60 € confirma que los precios están bastante dispersos y no siguen un valor típico muy marcado.
+
+Al observar los percentiles, se ve que el 25% de las propiedades cuesta 38 € o menos, y el 75% no supera los 90 €, de modo que la mayor parte del mercado se mantiene en un nivel asequible. Solo un pequeño grupo, el 5% superior, supera los 147 €. En conjunto, la distribución muestra un mercado con una base amplia de precios bajos y medios, y una minoría de alojamientos más costosos que elevan el extremo superior de la distribución.
 
 ```{python}
 # Estadísticas básicas de la variable objetivo: precio
@@ -507,29 +527,40 @@ for q, price in quartiles.items():
     print(f"  {q*100:.0f}% de propiedades: ≤ €{price:.2f}")
 ```
 
-explicar los resultados
 
 ## Análisis Exploratorio {#exploratorio}
+**Variables Clave del Estudio**
 
-### Variables Clave a Analizar
+Para estructurar el análisis, se agrupan las variables en cuatro bloques principales:
 
-#### Localización
-- Barrio y distrito
+**Localización**
 
-#### Características de la Propiedad
+- Barrio
+
+- Distrito
+
+**Características de la Propiedad**
+
 - Tipo de propiedad
+
 - Número de habitaciones
+
 - Amenidades (WiFi, TV, aire acondicionado, etc.)
 
-#### Condiciones de la vivienda
+**Condiciones y Normativas**
+
 - Política de cancelación
 - Mínimo de noches
 
-#### Historial y Reseñas
+**Historial y Reseñas**
+
 - Número de reseñas de limpieza
 
+
 ### Análisis por Ubicación
-EXPLICAR
+
+La gráfica muestra que la oferta de viviendas está muy concentrada en unos pocos barrios, especialmente en Centro y Embajadores, que destacan con mucha diferencia respecto al resto. Centro supera ampliamente las 3.000 propiedades, mientras que Embajadores se sitúa ligeramente por debajo. En contraste, barrios como Malasaña, La Latina, Arganzuela o Chamberí tienen una cantidad de alojamientos mucho más reducida, generalmente entre 400 y 600 propiedades. Esta concentración indica que la mayor parte del mercado turístico se ubica en zonas altamente demandadas por visitantes, mientras que el resto de barrios tienen una presencia menos masiva en la plataforma.
+
 ```{python}
 # Análisis por barrios - Top 12 barrios por número de propiedades
 top_neighborhoods = df['neighbourhood'].value_counts().head(12)
@@ -547,16 +578,21 @@ plt.title('Top 12 Barrios por Número de Propiedades', fontweight='bold',
 plt.xticks(range(len(top_neighborhoods)), top_neighborhoods.index, rotation=45, ha='right')
 plt.grid(True, alpha=0.3, color=FIGURE_COLORS['secondary'])
 plot_end()
+```
 
+Al comparar esta oferta con los barrios más caros, se observa que el precio no está directamente relacionado con el volumen de propiedades. Zonas como Recoletos, Hispanoamérica, El Viso o Castellana —que no aparecen entre los barrios con mayor número de viviendas— presentan los precios promedio más altos, todos por encima de los 90 €. Estos barrios tienen menos propiedades disponibles, pero pertenecen a zonas residenciales de alto nivel, lo que explica sus precios elevados. Por el contrario, Centro, a pesar de ser el barrio con más oferta, no está entre los más caros, lo que indica que la elevada competencia probablemente modera los precios.
+
+```{python}
 # Estadísticas de los barrios más caros
 print("BARRIOS MÁS CAROS (Precio Promedio):")
 for i, (neighborhood, price) in enumerate(neighborhood_prices.head(10).items(), 1):
     count = df[df['neighbourhood'] == neighborhood].shape[0]
     print(f"   {i:2d}. {neighborhood}: €{price:.2f} ({count} propiedades)")
-
 ```
 
 ### Visualización agregado por Barrio
+
+En el siguiente mapa se visualiza las viviendas agregados por barrio, donde se puede obtener un análisis geoespacial de los precios medios y la cantidad de propiedades disponibles en cada barrio de Madrid.
 
 ```{python}
 # Análisis por barrio
@@ -586,7 +622,7 @@ fig_barrios = px.scatter_mapbox(
     zoom=11,
     center=dict(lat=40.4168, lon=-3.7038),
     title='Análisis por Barrio',
-    labels={'precio_medio': 'Precio Medio (€)'}
+    # labels={'precio_medio': 'Precio Medio (€)'}
 )
 
 fig_barrios.update_layout(
@@ -608,47 +644,63 @@ Color de la burbuja:
 
 **Tamaño de la burbuja:** Representa la cantidad de propiedades disponibles en cada barrio.
 
-CAMBIAR LEYENDA Y EXPLICAR
-
 ### Matriz de Correlaciones
-EXPLICAR PARA QUE LO QUIERO HACER Y Q HA SALIDO
+
+La siguiente matriz de correlación muestra las relaciones entre las variables numéricas más relevantes del dataset. Se han seleccionado las 8 variables que presentan una mayor correlación absoluta con el precio, para entender mejor qué factores podrían influir en la fijación de los precios de las viviendas.
 ```{python}
-# Seleccionar variables numéricas para matriz de correlación
+# Seleccionar variables numéricas
 numeric_columns = df.select_dtypes(include=[np.number]).columns
 correlation_matrix = df[numeric_columns].corr()
 
-# Crear matriz de correlación con el precio
+# Obtener correlaciones con el precio
 price_correlations = correlation_matrix['price'].abs().sort_values(ascending=False)
 
-print("VARIABLES MÁS CORRELACIONADAS CON EL PRECIO:")
-for var, corr in price_correlations.items():
-    if var != 'price':
-        direction = "+" if correlation_matrix.loc['price', var] > 0 else "-"
-        print(f"   {direction} {var}: {corr:.3f}")
-
-# Visualizar matriz de correlación
-plot_start()
-
-top_corr_vars = price_correlations.head(12).index
+# Seleccionar top 8 variables más correlacionadas
+top_corr_vars = price_correlations.head(8).index
 correlation_subset = df[top_corr_vars].corr()
 
-sns.heatmap(correlation_subset, annot=True, cmap=get_colormap(), center=0, 
-            square=True, fmt='.2f', cbar_kws={"shrink": .8},
-            linewidths=0.5, linecolor='white')
-plt.title('Matriz de Correlación - Variables vs Precio', 
-          fontweight='bold', color=FIGURE_COLORS['dark'], fontsize=14)
+plt.figure(figsize=(10, 8))
 
+sns.heatmap(
+    correlation_subset,
+    annot=True,
+    cmap=get_colormap(),
+    center=0,
+    square=True,
+    fmt='.2f',
+    cbar_kws={"shrink": .7},
+    linewidths=0.5,
+    linecolor='white'
+)
+
+plt.xticks(rotation=45, ha='right')
+plt.yticks(rotation=0)
+plt.title(
+    'Matriz de Correlación',
+    fontweight='bold',
+    color=FIGURE_COLORS['dark'],
+    fontsize=16
+)
+
+plt.tight_layout()
 plot_end()
+
 ```
 
+Las variables más correlacionadas con el precio son el número de camas (beds) y la capacidad de alojamiento (accommodates), lo que indica que a medida que aumenta la capacidad de la vivienda, también tiende a aumentar su precio. Además, la presencia de aire acondicionado (air_conditioning) también muestra una correlación positiva con el precio, sugiriendo que las propiedades que ofrecen esta amenidad suelen tener precios más altos. Estos hallazgos resaltan la importancia de las características físicas y comodidades de las viviendas en la determinación de sus precios en el mercado de Airbnb.
+
 ### Análisis de Reseñas y Calificaciones
+
+La siguiente figura muestra que el precio promedio de las viviendas se mantiene notablemente estable a través de todos los rangos de número de reseñas, con variaciones mínimas entre categorías que oscilan alrededor de los 67–69 euros. Esta uniformidad sugiere, de manera bastante clara, que la cantidad de reviews no ejerce una influencia significativa sobre el precio, lo que transmite la idea de un mercado donde el valor del producto permanece relativamente constante independientemente de su nivel de popularidad o exposición.
+
+
 
 ```{python}
 # Análisis de reseñas
 review_columns = ['number_of_reviews', 'review_scores_cleanliness']
 
 if review_columns:
-    for i, col in enumerate(review_columns[:4]):
+    for i, col in enumerate(review_columns[:2]):
         if col in df.columns and df[col].notna().sum() > 10:  # Solo si hay suficientes datos
             plot_start()
             
@@ -671,7 +723,11 @@ if review_columns:
             plt.grid(True, alpha=0.3, color=FIGURE_COLORS['secondary'])
             
             plot_end()
+```
 
+En cuanto a las reseñas de limpieza, se observa una ligera tendencia ascendente en el precio promedio a medida que aumentan las puntuaciones de limpieza. Las propiedades con puntuaciones más altas tienden a tener precios ligeramente superiores, alcanzando un máximo alrededor de los 70 euros para las puntuaciones más elevadas. Aunque la variación no es drástica, esta tendencia sugiere que una mejor percepción de la limpieza puede contribuir a justificar precios marginalmente más altos, reflejando la importancia que los huéspedes otorgan a este aspecto en su experiencia de alojamiento.
+
+```{python}
 # Estadísticas de reseñas
 if 'number_of_reviews' in df.columns:
     print("ESTADÍSTICAS DE RESEÑAS:")
@@ -685,12 +741,15 @@ if 'number_of_reviews' in df.columns:
 
 ### Hipótesis a Validar
 
-1. La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.
-2. El número de habitaciones impacta en el precio de las viviendas.
-3. Convertir la cocina en una habitación adicional impacta positivamente al precio de las viviendas.
-4. Reducir el número mínimo de noches de estancia sube el precio de las viviendas.
-5. Con una política de cancelación más flexible el precio de la vivienda aumenta.
-6. Si aumento el servicio de limpieza las reseñas de limpieza potencialmente subirán por ende el precio aumentará.
+***1. La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.***
+
+***2. El número de habitaciones impacta en el precio de las viviendas.***
+
+***3. Reducir el número mínimo de noches de estancia sube el precio de las viviendas.***
+
+***4. Con una política de cancelación más flexible el precio de la vivienda aumenta.***
+
+***5. Si aumento el servicio de limpieza las reseñas de limpieza potencialmente subirán por ende el precio aumentará.***
 
 ---
 
@@ -726,14 +785,14 @@ def px_box_with_pvalue(df, cat_var, num_var, title=None, color_palette=None):
         title=title or f"{num_var} por {cat_var}",
         points="outliers"
     )
-    
+    """
     fig.add_annotation(
         x=0.5, y=data[num_var].max() * 0.95,
         text=f"{test_name} p-value = {p_value:.4f}",
         showarrow=False, font=dict(size=12, color="darkred"),
         bgcolor="rgba(255,255,255,0.8)", bordercolor="darkred", borderwidth=1
     )
-    
+    """
     # Fondo blanco y cuadrículas suaves
     fig.update_layout(
         plot_bgcolor="white",
@@ -745,7 +804,8 @@ def px_box_with_pvalue(df, cat_var, num_var, title=None, color_palette=None):
     return fig
 ```
 
-## HIPÓTESIS 1: Amenities y Precio
+
+## Hipótesis 1: Amenities y Precio
 
 **Planteamiento:** La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.
 
@@ -757,33 +817,43 @@ fig_wifi = px_box_with_pvalue(df, 'amenities_wifi_internet', 'price',
 fig_wifi
 ```
 
+Las viviendas con Wifi no muestran un diferencia significativa en terminos de precio medio en comparación con aquellas que lo tienen, ambas tienen un precio medio de 60€ la noche, por lo que la instalación del wifi no es clave para la optimización del precio de la vivienda.
+
 ```{python}
 fig_tv = px_box_with_pvalue(df, 'amenities_tv', 'price', 'Precio por TV', color_palette=px.colors.qualitative.Pastel)
 fig_tv
 ```
+
+En este caso la diferencia de precio medio entre viviendas con TV (69€ la noche) y sin TV (35€ la noche) es sigifificativa, por lo que la instalación de una TV en la vivienda puede ser una buena estrategia para optimizar el precio medio del alojamiento.
 
 ```{python}
 fig_ac = px_box_with_pvalue(df, 'amenities_air_conditioning', 'price', 'Precio por Aire Acondicionado', color_palette=px.colors.qualitative.Pastel)
 fig_ac
 ```
 
+Al igual que con la TV, las viviendas que disponen de aire acondicionado tienen un precio medio significativamente mayor (71€ la noche) en comparación con aquellas que no lo tienen (40€ la noche). Por lo tanto, la instalación de aire acondicionado puede ser una estrategia efectiva para aumentar el precio medio del alojamiento.
+
 ```{python}
 fig_heating = px_box_with_pvalue(df, 'amenities_heating', 'price', 'Precio por Calefacción', color_palette=px.colors.qualitative.Pastel)
 fig_heating
 ```
+
+Con este amenitie ocurre lo mismo que anteriormente, las viviendas que disponen de calefacción tienen un precio medio significativamente mayor (64€ la noche) en comparación con aquellas que no lo tienen (40€ la noche). Por lo tanto, la instalación de calefacción puede ser una estrategia efectiva para aumentar el precio medio del alojamiento.
 
 ```{python}
 fig_kitchen = px_box_with_pvalue(df, 'amenities_kitchen', 'price', 'Precio por Cocina', color_palette=px.colors.qualitative.Pastel)
 fig_kitchen
 ```
 
+La cocicna es otro de los amenities que impacta positivamente en el precio medio del alojamiento. Aquellas viviendas que disponen de cocina tienen un precio medio significativamente mayor (65€ la noche) en comparación con aquellas que no lo tienen (35€ la noche). Por lo tanto, la instalación de una cocina puede ser una estrategia efectiva para aumentar el precio medio del alojamiento.
+
 ### Conclusión de Hipótesis 1
 
-Analizando los datos de amenities se puede oservar que auqellas como que la vivienda incluya TV, aire acondicionado, calefaccion o cocina tienen un precio medio mayor que aquellas viviendas que no las incluyen. Sin emargo, la instalacion de Wifi no es estadisticamente significativa en el precio, por lo que la isntalacion de wifi no deberia de ser prioritaria a la hora de aumentar el precio de un alojamiento.
+Analizando los datos de amenities se puede oservar que aquellas como que la vivienda incluya TV, aire acondicionado, calefaccion o cocina tienen un precio medio mayor que aquellas viviendas que no las incluyen. Sin embargo, la instalación de Wifi no es estadisticamente significativa en el precio, por lo que la isntalación de wifi no deberia de ser prioritaria a la hora de aumentar el precio de un alojamiento.
 
 ---
 
-## HIPÓTESIS 2: Número de Habitaciones y Precio
+## Hipótesis 2: Número de Habitaciones y Precio
 
 **Planteamiento:** El número de habitaciones impacta en el precio de las viviendas.
 
@@ -799,20 +869,16 @@ En figura se observa que la mediana de los precios aumenta significativamente al
 ### Conclusión de Hipótesis 2
 
 **Hallazgos clave:**
+
 - **Incremento 1→2 habitaciones:** Aumento de precio significativo.
+
 - **Incremento 2→3 habitaciones:** Aumento menor y potencialmente no significativo. 
 
 Cuando una vivienda dispone de una sola habitación, la incorporación de una segunda, e incluso de una tercera, incrementa el precio medio del alojamiento. No obstante, si la vivienda ya cuenta con dos habitaciones, añadir una tercera no supone un aumento en el precio medio. Por ello, se recomienda que, en viviendas de una sola habitación, se considere la adición de una segunda para optimizar el valor medio del alojamiento.
 
 ---
 
-## HIPÓTESIS 3: Transformación de cocina a habitación adicional
-**Planteamiento:** Convertir la cocina en una habitación adicional impacta positivamente al precio de las viviendas.
-
-
----
-
-## HIPÓTESIS 4: Noches Mínimas y Precio
+## Hipótesis 3: Noches Mínimas y Precio
 
 **Planteamiento:** Reducir el número mínimo de noches de estancia sube el precio de las viviendas.
 
@@ -825,16 +891,17 @@ fig_min_nights
 
 Como se puerde observar en la figura, la mediana los precios entre 1 y 2 dos noches (51€ y 65€ la noche) es relativamente baja en comparación con la mediana de las propiedades que requieren un mínimo de 3 o 4 noches (80€ y 90€ la noche). Conforme van aumentando las noches mínimas (entre 5 y 7 noches) el precio medio de las propiedades tiende a disminuir ligeramente (75€ y 70€ la noche). Esto podría deberse a que las propiedades que requieren un mayor número de noches mínimas suelen ser más económicas para atraer reservas más largas, por lo que eservas de muchas noches no necesariamente generan precios más altos
 
-### Conclusión de Hipótesis 4
+### Conclusión de Hipótesis 3
 
 **Hallazgos clave:**
+
 - Propiedades con 3-4 noches mínimas tienen precios superiores al resto del número de noches mínimas.
 
 En conclusión, si se busca maximizar el ingreso por noche, conviene equilibrar la duración mínima de la estancia con la estrategia de precios, evitando que un exceso de noches mínimas reduzca el valor medio del alojamiento.
 
 ---
 
-## HIPÓTESIS 5: Política de Cancelación
+## Hipótesis 4: Política de Cancelación
 
 **Planteamiento:** Con una política de cancelación más flexible el precio de la vivienda aumenta.
 
@@ -847,19 +914,23 @@ fig_cancellation
 
 Se observa en la figura que aquellas viviendas que disponen de una política de cancelación super estricta de 30 días tienen un precio medio significativamente más alto (120€ la noche) en comparación con las políticas de cancelación más flexibles, como la política flexible (65€ la noche) o moderada (75€ la noche). Sin embargo, aquellas que tienen un apolítica super estricta de 60 días, su precio medio es el más bajo de todos (52€ la noche). Esto sugiere que los anfitriones que ofrecen políticas de cancelación más estrictas pueden justificar precios más altos, posiblemente debido a la percepción de mayor compromiso por parte de los huéspedes, pero que una política excesivamente estricta puede disuadir a potenciales huéspedes, resultando en precios más bajos.
 
-### Conclusión de Hipótesis 5
+### Conclusión de Hipótesis 4
 
 **Hallazgos clave:**
+
 - **Política estricta:** Propiedades con cancelación superestricta tienen precios altos.
+
 - **Correlación causal:** Parece indicar que hosts de propiedades premium usan políticas restrictivas para proteger su inversión.
 
 La implementación de una política super estricta de 30 días es la más efectiva para maximizar el precio medio del alojamiento. No obstante, es crucial equilibrar la flexibilidad de la política con las expectativas del mercado objetivo para evitar disuadir a potenciales huéspedes.
 
 ---
 
-## HIPÓTESIS 6: Reseñas de Limpieza
+## Hipótesis 5: Reseñas de Limpieza
 
 **Planteamiento:** Si aumento el servicio de limpieza las reseñas de limpieza potencialmente subirán por ende el precio aumentará.
+
+La siguente figura muestra un boxplot que representa la distribución de precios de las viviendas en función de las calificaciones de limpieza recibidas en las reseñas. Cada caja representa la distribución de precios para cada nivel de calificación de limpieza, incluyendo mediana, cuartiles y posibles outliers.
 
 ```{python}
 fig= px.box(
@@ -867,7 +938,8 @@ fig= px.box(
     x='review_scores_cleanliness', 
     y='price',
     color='review_scores_cleanliness',
-    color_discrete_sequence=px.colors.qualitative.Pastel
+    color_discrete_sequence=px.colors.qualitative.Pastel,
+    title='Precio por Calificación de Limpieza'
 )
 
 fig.update_layout(
@@ -878,9 +950,34 @@ fig.update_xaxes(showgrid=True, gridcolor="lightgray")
 fig.update_yaxes(showgrid=True, gridcolor="lightgray")
 ```
 
-### Conclusión de Hipótesis 6
+En la figura se observa que las propiedades con calificaciones de limpieza más altas (9-10) tienden a tener precios medios más altos (alrededor de 85-90€ la noche) en comparación con aquellas con calificaciones más bajas (6-7), que tienen precios medios significativamente más bajos (alrededor de 50-60€ la noche). Sin embargo, las viviendas que tienen calificaciones de 2 tienen un precio medio de 58€ la noche, similar a las de 9 o 10, por lo que hace falta un análisis más profundo para entender este comportamiento atípico.
+
+```{python}
+fig= px.histogram(
+    df, 
+    x='review_scores_cleanliness',
+    color='review_scores_cleanliness',
+    color_discrete_sequence=px.colors.qualitative.Pastel,
+    title='Número de viviendas por calificación de limpieza'
+)
+
+fig.update_layout(
+        plot_bgcolor="white",
+        paper_bgcolor="white"
+    )
+fig.update_xaxes(showgrid=True, gridcolor="lightgray")
+fig.update_yaxes(showgrid=True, gridcolor="lightgray")
+```
+
+En la figura se observa el número de viviendas en función de la calificación de limpieza. Un total de 6285 tienen una calificación de limpieza de 10, siendo la mayoría de las viviendas. A medida que la calificación disminuye, el número de viviendas también disminuye, con solo 31 viviendas que tienen una calificación de limpieza de 2. Por lo tanto, la mediana de precio de las viviendas con calificación de limpieza de 2 puede estar sesgada debido al bajo número de viviendas en esa categoría. De esta manera, se puede concluir que una mejor calificación de limpieza está asociada con precios más altos.
+
+### Conclusión de Hipótesis 5
 
 **Hallazgos clave:**
+
+- **Precio vs Limpieza:** Mejores calificaciones de limpieza correlacionan con precios más altos.
+
+Esto sugiere que una mejor percepción de la limpieza por parte de los huéspedes puede justificar precios más altos, posiblemente debido a la mayor satisfacción del cliente y la disposición a pagar más por una experiencia de alojamiento percibida como más limpia y cómoda.
 
 ---
 
@@ -892,36 +989,25 @@ fig.update_yaxes(showgrid=True, gridcolor="lightgray")
 # Crear tabla de recomendaciones basada en el análisis
 recommendations_data = {
     'Estrategia': [
-        'Optimización por Ubicación',
-        'Mejora del Perfil de Host',
-        'Upgrade de Amenidades',
-        'Gestión de Capacidad',
+        'Adición de Amenities',
+        'Adición de Habitaciones',
+        'Ajuste de Noches Mínimas',
         'Políticas de Cancelación',
-        'Gestión de Reviews'
+        'Gestión de la limpieza'
     ],
     'Acción_Específica': [
-        'Propiedades a >5km del centro: reducir precio 10-15%',
-        'Obtener status de Superhost + verificaciones completas',
-        'Añadir WiFi, TV, aire acondicionado en propiedades básicas',
-        'Propiedades 1-2 personas: considerar dividir espacios grandes',
-        'Flexibilizar cancelaciones en segmento premium',
-        'Incentivar reviews: follow-up post-estancia'
-    ],
-    'Impacto_Estimado': [
-        'Aumento ocupación 15-25%',
-        'Premium pricing 8-12%',
-        'Incremento precio 5-10%',
-        'Optimización RevPAR 10-20%',
-        'Aumento conversión 5-8%',
-        'Mejora posicionamiento 10-15%'
+        'Añadir TV, aire acondicionado, calefacción, o cocina en propiedades básicas',
+        'Propiedas con 1 habitación: añadir habitaciones adicionales',
+        'Ajustar mínimo de noches a 3-4 para maximizar precio medio',
+        'Implementar política estricta en las propiedades',
+        'Aumentar la calidad del servicio de limpieza para mejorar reseñas'
     ],
     'Inversión_Requerida': [
-        'Baja - Ajuste de precios',
         'Media - Tiempo y mejoras servicio',
         'Alta - Instalaciones físicas',
-        'Alta - Renovación espacios',
+        'Baja - Ajuste de noches',
         'Baja - Cambio de políticas',
-        'Baja - Procesos y seguimiento'
+        'Media - Mejora de procesos y seguimiento'
     ]
 }
 
@@ -932,36 +1018,25 @@ recommendations_df = pd.DataFrame(recommendations_data)
 # Mostrar tabla de recomendaciones
 recomendaciones_df = pd.DataFrame({
     'Estrategia': [
-        "Optimización por Ubicación",
-        "Mejora del Perfil de Host", 
-        "Upgrade de Amenidades",
-        "Gestión de Capacidad",
-        "Políticas de Cancelación",
-        "Gestión de Reviews"
+        'Adición de Amenities',
+        'Adición de Habitaciones',
+        'Ajuste de Noches Mínimas',
+        'Políticas de Cancelación',
+        'Gestión de la limpieza'
     ],
     'Acción_Específica': [
-        "Propiedades a >5km del centro: reducir precio 10-15%",
-        "Obtener status de Superhost + verificaciones completas",
-        "Añadir WiFi, TV, aire acondicionado en propiedades básicas", 
-        "Propiedades 1-2 personas: considerar dividir espacios grandes",
-        "Flexibilizar cancelaciones en segmento premium",
-        "Incentivar reviews: follow-up post-estancia"
-    ],
-    'Impacto_Estimado': [
-        "Aumento ocupación 15-25%",
-        "Premium pricing 8-12%",
-        "Incremento precio 5-10%", 
-        "Optimización RevPAR 10-20%",
-        "Aumento conversión 5-8%",
-        "Mejora posicionamiento 10-15%"
+        'Añadir WiFi, TV, aire acondicionado, calefacción, o cocina en propiedades básicas',
+        'Propiedas con 1 habitación: añadir habitaciones adicionales',
+        'Ajustar mínimo de noches a 3-4 para maximizar precio medio',
+        'Implementar política estricta en las propiedades',
+        'Aumentar la calidad del servicio de limpieza para mejorar reseñas'
     ],
     'Inversión_Requerida': [
-        "Baja - Ajuste de precios",
-        "Media - Tiempo y mejoras servicio",
-        "Alta - Instalaciones físicas",
-        "Alta - Renovación espacios", 
-        "Baja - Cambio de políticas",
-        "Baja - Procesos y seguimiento"
+        'Media - Tiempo y mejoras servicio',
+        'Alta - Instalaciones físicas',
+        'Baja - Ajuste de noches',
+        'Baja - Cambio de políticas',
+        'Media - Mejora de procesos y seguimiento'
     ]
 })
 
@@ -974,59 +1049,38 @@ display(HTML(html_table))
 ```
 
 ### Desarrollo de recomendaciones
+::: {.panel-tabset}
 
-**Recomendación 1:** Priorizar instalación de aire acondicionado, cocina completa y calefacción en propiedades nuevas. El WiFi es imprescindible pero no diferenciador.
+### **Amenities** 
+Priorizar la instalación de una TV, aire acondicionado, cocina completa y calefacción en propiedades nuevas. El WiFi es imprescindible pero no diferenciador.
 
-**Recomendación 2:** Si una propiedad tiene 1 habitación, invertir en la división/reforma para crear 2 habitaciones es altamente rentable. Pasar de 2 a 3 habitaciones tiene menor rentabilidad.
+Entre todas las amenities mencionadas que pueden ser una buena estrategia para aumentar el precio medio del alojamiento, se recomienda colocar una TV primero ya que puede ser la opción más económica y con mayor impacto en el precio medio. Posteriormente, se recomienda instalar aire acondicionado, cocina completa y calefacción, en función del presupuesto disponible. 
 
-**Recomendación 4:** Ajustar el mínimo de noches a 3-4 para maximizar precio medio, evitando valores extremos (1 noche o >5 noches).
+### **Habitaciones** 
+Si una propiedad tiene 1 habitación, invertir en la división/reforma para crear 2 habitaciones es altamente rentable. Pasar de 2 a 3 habitaciones tiene menor rentabilidad.
 
-**Recomendación 5:** 
-  - Propiedades **premium/nuevas:** Implementar política estricta y cobrar premium
-  - Propiedades **estándar/competitivas:** Usar política moderada/flexible para maximizar ocupación
+En las viviendas que se dispongo de una sola habitación, es altamente recomendado invertir en la creación de una segunda habitación, ya que esto incrementa significativamente el precio medio del alojamiento. Sin embargo, si la vivienda ya cuenta con dos habitaciones, añadir una tercera no supone un aumento significativo en el precio medio, por lo que se debe evaluar cuidadosamente la rentabilidad de dicha inversión.
 
+### **Noches Mínimas** 
+Ajustar el mínimo de noches a 3-4 para maximizar precio medio, evitando valores extremos (1 noche o >5 noches).
 
-# Conclusiones {#conclusiones}
+Se debe ajustar el mínimo de noches para poder obtener un equilibrio entre la duración de la estancia y la estrategia de precios. Se recomienda establecer un mínimo de noches entre 3 y 4, ya que esto maximiza el precio medio del alojamiento. Evitar establecer un mínimo de 1 noche o más de 5 noches, ya que estos extremos pueden reducir el valor medio del alojamiento.
 
-## Hallazgos Clave
+### **Cancelación**
+Ajustar la política de cancelación según el tipo de propiedad.
 
-Este análisis de datos de AirBnB Madrid revela patrones claros para la optimización de precios:
+La implementeación de una política de cancelación debe de ser considerada en función de la propiedad y sus características. Para propiedades premium o nuevas, se recomienda implementar una política estricta de cancelación, ya que esto permite justificar precios más altos. Por otro lado, para propiedades estándar o competitivas, se recomienda utilizar políticas de cancelación moderadas o flexibles, ya que mantiene un precio competitivo y maximiza la ocupación. Aun así, este indicador debe de ser estudiado en conjunto con otros factores para determinar la mejor estrategia de precios, ya que se puede deber a que viviendas premium utilizan políticas restrictivas para proteger su inversión.
 
-### 🎯 **Factores Críticos de Precio**
-1. **Ubicación**: La distancia al centro es el factor más determinante
-2. **Tipo de alojamiento**: Apartamentos completos superan a habitaciones compartidas por 60-80%
-3. **Capacidad**: Correlación directa - cada huésped adicional incrementa precio ~15-20€
-4. **Calidad del host**: Superhosts pueden cobrar premium de 8-12%
+### **Cancelación** 
+Mejorar la calidad del servicio de limpieza para obtener mejores reseñas y justificar precios más altos.
 
-### 📊 **Oportunidades Identificadas**
-- **Segmento económico** (<50€): Representa 35% del mercado pero con menor rentabilidad
-- **Segmento premium** (150-200€): Solo 15% del mercado pero alta rentabilidad
-- **Propiedades sub-optimizadas**: 25% tienen precios no alineados con su potencial
+Las viviendas que reciben mejores calificaciones de limpieza tienden a tener precios medios más altos. Por lo tanto, se recomienda invertir en mejorar la calidad del servicio de limpieza, ya sea mediante la contratación de personal adicional, la implementación de estándares más rigurosos o la utilización de productos de limpieza de alta calidad puede resultar en mejores reseñas por parte de los huéspedes, lo que a su vez justifica precios más altos y mejora la reputación del alojamiento.
 
-### 💡 **Recomendaciones Prioritarias**
+:::
 
-```{python}
-# Resumen ejecutivo de impacto
-print("IMPACTO ESTIMADO DE IMPLEMENTACIÓN COMPLETA:")
-print("="*50)
-print("📈 Incremento promedio de ingresos: 15-25%")
-print("🏆 Mejora en posicionamiento: 10-15%") 
-print("⭐ Aumento en calificaciones: 0.2-0.3 puntos")
-print("🎯 ROI esperado: 200-300% en primer año")
-print("\nFactores críticos de éxito:")
-print("  • Implementación gradual y monitoreo continuo")
-print("  • Benchmarking competitivo regular")
-print("  • Foco en experiencia del huésped")
-print("  • Pricing dinámico por temporada")
-```
+# Conclusión {#conclusiones}
 
-### 🔄 **Próximos Pasos**
-1. **Implementar** las recomendaciones de Fase 1 inmediatamente
-2. **Monitorear** KPIs clave: ocupación, precio medio, rating
-3. **Iterar** estrategias basándose en resultados obtenidos
-4. **Escalar** mejores prácticas al resto del portfolio
-
-El mercado AirBnB de Madrid ofrece oportunidades significativas de optimización. La implementación estructurada de estas recomendaciones puede generar mejoras sustanciales en rentabilidad manteniendo la competitividad.
+En conclusión, las estrategias recomendadas se centran en mejorar las características y servicios ofrecidos por las propiedades para maximizar el precio medio del alojamiento. La implementación de estas recomendaciones debe ser evaluada cuidadosamente en función del presupuesto disponible, el tipo de propiedad y las expectativas del mercado objetivo para asegurar una optimización efectiva del valor del alojamiento.
 
 ```{=html}
 <div id="scrollToTopContainer" style="position: fixed; bottom: 20px; right: 20px; display: none;">

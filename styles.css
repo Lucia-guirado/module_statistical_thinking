@@ -533,3 +533,39 @@ pre, code {
   max-width: 100%;
   height: auto;
 }
+/*-------------------------------------
+   TABSET ESTILO VERDE SAGE
+--------------------------------------*/
+
+/* Barra donde están las pestañas */
+.nav-tabs {
+  background-color: #F4F7F1 !important;        /* sage muy claro */
+  padding-top: 6px !important;
+  box-shadow: none !important;
+}
+
+/* Pestañas normales */
+.nav-tabs .nav-link {
+  color: #6B705C !important;                  /* sage oscuro */
+  background-color: #DDE5D3 !important;       /* sage claro */
+  border: 1px solid #A3B18A !important;       /* sage principal */
+  margin-right: 4px !important;
+  border-radius: 8px 8px 0 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Hover */
+.nav-tabs .nav-link:hover {
+  background-color: #C7D3BD !important;       /* un sage más oscuro */
+  color: #4D5545 !important;
+}
+
+/* Pestaña activa */
+.nav-tabs .nav-link.active {
+  background-color: #A3B18A !important;       /* sage principal */
+  color: white !important;
+  border-color: #6B705C #6B705C transparent !important;
+  font-weight: 600 !important;
+}
+
+
