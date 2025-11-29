@@ -117,10 +117,6 @@ dmypy.json
 _site/
 .quarto
 
-# Output files
-*.html
-*.pdf
-*.docx
 
 # OS generated files
 .DS_Store
