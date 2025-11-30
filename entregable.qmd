@@ -559,7 +559,7 @@ Para estructurar el análisis, se agrupan las variables en cuatro bloques princi
 
 ### Análisis por Ubicación
 
-La gráfica muestra que la oferta de viviendas está muy concentrada en unos pocos barrios, especialmente en Centro y Embajadores, que destacan con mucha diferencia respecto al resto. Centro supera ampliamente las 3.000 propiedades, mientras que Embajadores se sitúa ligeramente por debajo. En contraste, barrios como Malasaña, La Latina, Arganzuela o Chamberí tienen una cantidad de alojamientos mucho más reducida, generalmente entre 400 y 600 propiedades. Esta concentración indica que la mayor parte del mercado turístico se ubica en zonas altamente demandadas por visitantes, mientras que el resto de barrios tienen una presencia menos masiva en la plataforma.
+La gráfica muestra que la oferta de viviendas está muy concentrada en unos pocos barrios, especialmente en Centro y Embajadores, que destacan con mucha diferencia respecto al resto. Centro supera ampliamente las 3.000 propiedades, mientras que Embajadores se sitúa por debajo. En contraste, barrios como Malasaña, La Latina, Arganzuela o Chamberí tienen una cantidad de alojamientos mucho más reducida, generalmente entre 400 y 600 propiedades. Esta concentración indica que la mayor parte del mercado turístico se ubica en zonas altamente demandadas por visitantes, mientras que el resto de barrios tienen una presencia menos masiva en la plataforma.
 
 ```{python}
 # Análisis por barrios - Top 12 barrios por número de propiedades
@@ -580,7 +580,7 @@ plt.grid(True, alpha=0.3, color=FIGURE_COLORS['secondary'])
 plot_end()
 ```
 
-Al comparar esta oferta con los barrios más caros, se observa que el precio no está directamente relacionado con el volumen de propiedades. Zonas como Recoletos, Hispanoamérica, El Viso o Castellana —que no aparecen entre los barrios con mayor número de viviendas— presentan los precios promedio más altos, todos por encima de los 90 €. Estos barrios tienen menos propiedades disponibles, pero pertenecen a zonas residenciales de alto nivel, lo que explica sus precios elevados. Por el contrario, Centro, a pesar de ser el barrio con más oferta, no está entre los más caros, lo que indica que la elevada competencia probablemente modera los precios.
+Al comparar esta oferta con los barrios más caros, se observa que el precio no está directamente relacionado con el volumen de propiedades. Zonas como Recoletos, Hispanoamérica, El Viso o Castellana, que no aparecen entre los barrios con mayor número de viviendas, presentan los precios promedio más altos, todos por encima de los 90 €. Estos barrios tienen menos propiedades disponibles, pero pertenecen a zonas residenciales de alto nivel, lo que explica sus precios elevados. Por el contrario, Centro, a pesar de ser el barrio con más oferta, no está entre los más caros, lo que indica que la elevada competencia probablemente modera los precios.
 
 ```{python}
 # Estadísticas de los barrios más caros
@@ -691,7 +691,7 @@ Las variables más correlacionadas con el precio son el número de camas (beds) 
 
 ### Análisis de Reseñas y Calificaciones
 
-La siguiente figura muestra que el precio promedio de las viviendas se mantiene notablemente estable a través de todos los rangos de número de reseñas, con variaciones mínimas entre categorías que oscilan alrededor de los 67–69 euros. Esta uniformidad sugiere, de manera bastante clara, que la cantidad de reviews no ejerce una influencia significativa sobre el precio, lo que transmite la idea de un mercado donde el valor del producto permanece relativamente constante independientemente de su nivel de popularidad o exposición.
+La siguiente figura muestra que el precio promedio de las viviendas se mantiene notablemente estable a través de todos los rangos de número de reseñas, con variaciones mínimas entre categorías que oscilan alrededor de los 67–69€. Esta uniformidad sugiere, de manera bastante clara, que la cantidad de reviews no ejerce una influencia significativa sobre el precio, lo que transmite la idea de un mercado donde el valor del producto permanece relativamente constante independientemente de su nivel de popularidad o exposición.
 
 
 
@@ -727,29 +727,18 @@ if review_columns:
 
 En cuanto a las reseñas de limpieza, se observa una ligera tendencia ascendente en el precio promedio a medida que aumentan las puntuaciones de limpieza. Las propiedades con puntuaciones más altas tienden a tener precios ligeramente superiores, alcanzando un máximo alrededor de los 70 euros para las puntuaciones más elevadas. Aunque la variación no es drástica, esta tendencia sugiere que una mejor percepción de la limpieza puede contribuir a justificar precios marginalmente más altos, reflejando la importancia que los huéspedes otorgan a este aspecto en su experiencia de alojamiento.
 
-```{python}
-# Estadísticas de reseñas
-if 'number_of_reviews' in df.columns:
-    print("ESTADÍSTICAS DE RESEÑAS:")
-    print(f"   Promedio de reseñas: {df['number_of_reviews'].mean():.1f}")
-    print(f"   Mediana de reseñas: {df['number_of_reviews'].median():.1f}")
-    
-    # Propiedades sin reseñas
-    no_reviews = (df['number_of_reviews'] == 0).sum()
-    print(f"   Propiedades sin reseñas: {no_reviews} ({no_reviews/len(df)*100:.1f}%)")
-```
 
 ### Hipótesis a Validar
 
-***1. La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.***
+**1. La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.**
 
-***2. El número de habitaciones impacta en el precio de las viviendas.***
+**2. El número de habitaciones impacta en el precio de las viviendas.**
 
-***3. Reducir el número mínimo de noches de estancia sube el precio de las viviendas.***
+**3. Reducir el número mínimo de noches de estancia sube el precio de las viviendas.**
 
-***4. Con una política de cancelación más flexible el precio de la vivienda aumenta.***
+**4. Con una política de cancelación más flexible el precio de la vivienda aumenta.**
 
-***5. Si aumento el servicio de limpieza las reseñas de limpieza potencialmente subirán por ende el precio aumentará.***
+**5. Si aumento el servicio de limpieza las reseñas de limpieza potencialmente subirán por ende el precio aumentará.**
 
 ---
 
@@ -809,7 +798,8 @@ def px_box_with_pvalue(df, cat_var, num_var, title=None, color_palette=None):
 
 **Planteamiento:** La presencia de amenities clave como aire acondicionado, televisión, calefacción, cocina o conexión a internet aumenta el precio de las viviendas.
 
-En las siguientes figuras se muestran boxplots que representan la distribución de precios de las viviendas en función de la presencia o ausencia de ciertas amenities clave. Cada caja representa la distribución de precios para viviendas que cuentan con la amenidad (Sí) y aquellas que no la tienen (No). A su vez, se indica el p-valor del test estadístico (t-test o ANOVA) para evaluar si las diferencias en precios entre los dos grupos son estadísticamente significativas.
+En las siguientes figuras se muestran boxplots que representan la distribución de precios de las viviendas en función de la presencia o ausencia de ciertas amenities clave. Cada caja representa la distribución de precios para viviendas que cuentan con la amenidad (Sí) y aquellas que no la tienen (No). 
+
 ```{python}
 # Crear boxplots para cada amenity
 fig_wifi = px_box_with_pvalue(df, 'amenities_wifi_internet', 'price', 
@@ -824,7 +814,7 @@ fig_tv = px_box_with_pvalue(df, 'amenities_tv', 'price', 'Precio por TV', color_
 fig_tv
 ```
 
-En este caso la diferencia de precio medio entre viviendas con TV (69€ la noche) y sin TV (35€ la noche) es sigifificativa, por lo que la instalación de una TV en la vivienda puede ser una buena estrategia para optimizar el precio medio del alojamiento.
+En este caso la diferencia de precio medio entre viviendas con TV (69€ la noche) y sin TV (35€ la noche) es significativa, por lo que la instalación de una TV en la vivienda puede ser una buena estrategia para optimizar el precio medio del alojamiento.
 
 ```{python}
 fig_ac = px_box_with_pvalue(df, 'amenities_air_conditioning', 'price', 'Precio por Aire Acondicionado', color_palette=px.colors.qualitative.Pastel)
@@ -853,7 +843,7 @@ La cocicna es otro de los amenities que impacta positivamente en el precio medio
 
 - **Instalación de amenities:** TV, aire acondicionado, calefacción y cocina aumentan significativamente el precio medio.
 
-Analizando los datos de amenities se puede oservar que aquellas como que la vivienda incluya TV, aire acondicionado, calefaccion o cocina tienen un precio medio mayor que aquellas viviendas que no las incluyen. Sin embargo, la instalación de Wifi no es estadisticamente significativa en el precio, por lo que la isntalación de wifi no deberia de ser prioritaria a la hora de aumentar el precio de un alojamiento.
+Analizando los datos de amenities se puede oservar que aquellas como que la vivienda incluya TV, aire acondicionado, calefaccion o cocina tienen un precio medio mayor que aquellas viviendas que no las incluyen. Sin embargo, la instalación de Wifi no tiene gran impacto en el precio, por lo que la instalación de wifi no deberia de ser prioritaria a la hora de aumentar el precio de un alojamiento.
 
 ---
 
@@ -861,14 +851,14 @@ Analizando los datos de amenities se puede oservar que aquellas como que la vivi
 
 **Planteamiento:** El número de habitaciones impacta en el precio de las viviendas.
 
-En la siguiente figura se ve reflejado el número de habtaciones (entre 1 y 3 habitaciones) y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada número de habitaciones que contenga la vivienda, incluyendo mediana, cuartiles y posibles outliers. A su vez, se indica el p-valor del test estadístico (ANOVA) para evaluar si las diferencias en precios entre los distintos grupos son estadísticamente significativas. 
+En la siguiente figura se ve reflejado el número de habtaciones (entre 1 y 3 habitaciones) y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada número de habitaciones que contenga la vivienda, incluyendo mediana, cuartiles y posibles outliers.
 
 ```{python}
 fig_bedrooms = px_box_with_pvalue(df, 'bedrooms', 'price', 'Precio por Número de Habitaciones', color_palette=px.colors.qualitative.Pastel)
 fig_bedrooms
 ```
 
-En figura se observa que la mediana de los precios aumenta significativamente al pasar de 1 a 2 habitaciones (de 60€ a 75€ la noche). Sin embargo, al aumentar de 2 a 3 habitaciones, el incremento en la mediana del precio es mucho menor (de 75€ a 80€ la noche). Por lo tanto, se puede deducir que el nñumero óptimoi de habitaciones, en este rango, es de 2, de manera que se maxima el precio medio ndel alojamiento.
+En la figura se observa que la mediana de los precios aumenta significativamente al pasar de 1 a 2 habitaciones (de 60€ a 75€ la noche). Sin embargo, al aumentar de 2 a 3 habitaciones, el incremento en la mediana del precio es mucho menor (de 75€ a 80€ la noche). Por lo tanto, se puede deducir que el número óptimo de habitaciones, en este rango, es de 2, de manera que se maxima el precio medio del alojamiento.
 
 ### Conclusión de Hipótesis 2
 
@@ -886,14 +876,14 @@ Cuando una vivienda dispone de una sola habitación, la incorporación de una se
 
 **Planteamiento:** Reducir el número mínimo de noches de estancia sube el precio de las viviendas.
 
-En la siguiente figura se ve reflejado el número mínimo de noches (entre 1 y 7 noches) y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada número mínimo de noches, incluyendo mediana, cuartiles y posibles outliers. A su vez, se indica el p-valor del test estadístico (ANOVA) para evaluar si las diferencias en precios entre los distintos grupos son estadísticamente significativas. 
+En la siguiente figura se ve reflejado el número mínimo de noches (entre 1 y 7 noches) y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada número mínimo de noches, incluyendo mediana, cuartiles y posibles outliers.
 
 ```{python}
 fig_min_nights = px_box_with_pvalue(df, 'minimum_nights', 'price', 'Precio por Noches Mínimas', color_palette=px.colors.qualitative.Pastel)
 fig_min_nights
 ```
 
-Como se puerde observar en la figura, la mediana los precios entre 1 y 2 dos noches (51€ y 65€ la noche) es relativamente baja en comparación con la mediana de las propiedades que requieren un mínimo de 3 o 4 noches (80€ y 90€ la noche). Conforme van aumentando las noches mínimas (entre 5 y 7 noches) el precio medio de las propiedades tiende a disminuir ligeramente (75€ y 70€ la noche). Esto podría deberse a que las propiedades que requieren un mayor número de noches mínimas suelen ser más económicas para atraer reservas más largas, por lo que eservas de muchas noches no necesariamente generan precios más altos
+Como se puede observar en la figura, la mediana los precios entre 1 y 2 dos noches (51€ y 65€ la noche) es relativamente baja en comparación con la mediana de las propiedades que requieren un mínimo de 3 o 4 noches (80€ y 90€ la noche). Conforme van aumentando las noches mínimas (entre 5 y 7 noches) el precio medio de las propiedades tiende a disminuir ligeramente (75€ y 70€ la noche). Esto podría deberse a que las propiedades que requieren un mayor número de noches mínimas suelen ser más económicas para atraer reservas más largas, por lo que reservas de muchas noches no necesariamente generan precios más altos
 
 ### Conclusión de Hipótesis 3
 
@@ -909,14 +899,14 @@ En conclusión, si se busca maximizar el ingreso por noche, conviene equilibrar 
 
 **Planteamiento:** Con una política de cancelación más flexible el precio de la vivienda aumenta.
 
-En la siguiente figura se ve reflejado los distintos tipos de políticas de cancelación y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada tipo de política de cancelación, incluyendo mediana, cuartiles y posibles outliers. A su vez, se indica el p-valor del test estadístico (ANOVA) para evaluar si las diferencias en precios entre los distintos grupos son estadísticamente significativas.
+En la siguiente figura se ve reflejado los distintos tipos de políticas de cancelación y su relación con el precio medio del alojamiento. Cada caja representa la distribución de precios para cada tipo de política de cancelación, incluyendo mediana, cuartiles y posibles outliers.
 
 ```{python}
 fig_cancellation = px_box_with_pvalue(df, 'cancellation_policy', 'price', 'Precio por Política de Cancelación', color_palette=px.colors.qualitative.Pastel)
 fig_cancellation
 ```
 
-Se observa en la figura que aquellas viviendas que disponen de una política de cancelación super estricta de 30 días tienen un precio medio significativamente más alto (120€ la noche) en comparación con las políticas de cancelación más flexibles, como la política flexible (65€ la noche) o moderada (75€ la noche). Sin embargo, aquellas que tienen un apolítica super estricta de 60 días, su precio medio es el más bajo de todos (52€ la noche). Esto sugiere que los anfitriones que ofrecen políticas de cancelación más estrictas pueden justificar precios más altos, posiblemente debido a la percepción de mayor compromiso por parte de los huéspedes, pero que una política excesivamente estricta puede disuadir a potenciales huéspedes, resultando en precios más bajos.
+Se observa en la figura que aquellas viviendas que disponen de una política de cancelación super estricta de 30 días tienen un precio medio significativamente más alto (120€ la noche) en comparación con las políticas de cancelación más flexibles, como la política flexible (65€ la noche) o moderada (75€ la noche). Sin embargo, aquellas que tienen una política super estricta de 60 días, su precio medio es el más bajo de todos (52€ la noche). Esto sugiere que los anfitriones que ofrecen políticas de cancelación más estrictas pueden justificar precios más altos, posiblemente debido a la percepción de mayor compromiso por parte de los huéspedes, pero que una política excesivamente estricta puede disuadir a potenciales huéspedes, resultando en precios más bajos.
 
 ### Conclusión de Hipótesis 4
 
@@ -1056,17 +1046,15 @@ display(HTML(html_table))
 ::: {.panel-tabset}
 
 ### **Amenities** 
-Priorizar la instalación de una TV, aire acondicionado, cocina completa y calefacción en propiedades nuevas. El WiFi es imprescindible pero no diferenciador.
+Priorizar la instalación de una TV, aire acondicionado, cocina completa y calefacción en propiedades nuevas. El WiFi no es diferenciador.
 
 Entre todas las amenities mencionadas que pueden ser una buena estrategia para aumentar el precio medio del alojamiento, se recomienda colocar una TV primero ya que puede ser la opción más económica y con mayor impacto en el precio medio. Posteriormente, se recomienda instalar aire acondicionado, cocina completa y calefacción, en función del presupuesto disponible. 
 
 ### **Habitaciones** 
-Si una propiedad tiene 1 habitación, invertir en la división/reforma para crear 2 habitaciones es altamente rentable. Pasar de 2 a 3 habitaciones tiene menor rentabilidad.
 
-En las viviendas que se dispongo de una sola habitación, es altamente recomendado invertir en la creación de una segunda habitación, ya que esto incrementa significativamente el precio medio del alojamiento. Sin embargo, si la vivienda ya cuenta con dos habitaciones, añadir una tercera no supone un aumento significativo en el precio medio, por lo que se debe evaluar cuidadosamente la rentabilidad de dicha inversión.
+En las viviendas que se disponga de una sola habitación, es altamente recomendado invertir en la creación de una segunda habitación, ya que esto incrementa significativamente el precio medio del alojamiento. Sin embargo, si la vivienda ya cuenta con dos habitaciones, añadir una tercera no supone un gran aumento en el precio medio, por lo que se debe evaluar cuidadosamente la rentabilidad de dicha inversión.
 
 ### **Noches Mínimas** 
-Ajustar el mínimo de noches a 3-4 para maximizar precio medio, evitando valores extremos (1 noche o >5 noches).
 
 Se debe ajustar el mínimo de noches para poder obtener un equilibrio entre la duración de la estancia y la estrategia de precios. Se recomienda establecer un mínimo de noches entre 3 y 4, ya que esto maximiza el precio medio del alojamiento. Evitar establecer un mínimo de 1 noche o más de 5 noches, ya que estos extremos pueden reducir el valor medio del alojamiento.
 
